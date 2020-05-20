@@ -54,6 +54,9 @@ RUN pip3 install --upgrade pip && \
     psutil gputil setproctitle tensorflow-gpu>=2.1.0 \
     gym tensorflow-probability requests>=2.23.0 msgpack==0.6.2 ray[rllib]>=0.8.5
 
+# Fix missing packages
+RUN pip3 install packaging
+
 COPY src/ /
 
 # For now, lock image, to make it easy to docker exec / eai job exec
